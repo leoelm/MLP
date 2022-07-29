@@ -1,4 +1,4 @@
-#include "layer.h"
+#include "Layer.h"
 #include <stdexcept>
 
 using namespace std;

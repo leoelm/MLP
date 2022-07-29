@@ -1,5 +1,7 @@
-prog: *.o
+prog: main.o
 	g++ -std=c++11 *.o -o prog
+Network.o: Network.cpp Network.h Layer.o Sigmoid.o Softmax.o
+	g++ -std=c++11 -c Network.cpp -o Network.o
 Layer.o: Layer.cpp Layer.h Connection.o BaseActivation.o
 	g++ -std=c++11 -c Layer.cpp -o Layer.o
 Connection.o: Connection.cpp Connection.h Neuron.o BaseActivation.o
@@ -12,7 +14,7 @@ Sigmoid.o: Sigmoid.cpp Sigmoid.h BaseActivation.o
 	g++ -std=c++11 -c Sigmoid.cpp -o Sigmoid.o
 Softmax.o: Softmax.cpp Softmax.h BaseActivation.o
 	g++ -std=c++11 -c Softmax.cpp -o Softmax.o
-main.o: main.cpp Layer.o Sigmoid.o Softmax.o
+main.o: main.cpp Network.o
 	g++ -std=c++11 -c main.cpp -o main.o
 clean:
 	rm prog *.o

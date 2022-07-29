@@ -1,3 +1,6 @@
+#ifndef CONNECTION_H
+#define CONNECTION_H
+
 #include "Neuron.h"
 
 class Connection {
@@ -15,3 +18,6 @@ class Connection {
         double get_weight();
         void set_weight(double weight);
 };
+
+
+#endif

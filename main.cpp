@@ -1,13 +1,16 @@
-#include "Neuron.h"
+#include "Connection.h"
 #include <iostream>
 
 using namespace std;
 
 int main() {
 
-    Neuron* neuron = new Neuron(0); 
+    Neuron* n1 = new Neuron(0); 
+    Neuron* n2 = new Neuron(0);
 
-    cout << neuron->get_value() << endl;
+    Connection* connection = new Connection(n1, n2, 1);
+
+    cout << connection->get_weight() << endl;
 
     return 0;
 }

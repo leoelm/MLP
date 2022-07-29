@@ -1,16 +1,13 @@
-#include "Connection.h"
+#include "Layer.h"
 #include <iostream>
 
 using namespace std;
 
 int main() {
 
-    Neuron* n1 = new Neuron(0); 
-    Neuron* n2 = new Neuron(0);
+    Layer *layer = new Layer(10);
 
-    Connection* connection = new Connection(n1, n2, 1);
-
-    cout << connection->get_weight() << endl;
+    cout << layer->get_size() << endl;
 
     return 0;
 }
